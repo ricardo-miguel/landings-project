@@ -1,0 +1,53 @@
+$logo: '/wp-content/plugins/landings/assets/public/logo.png';
+
+#login, .login {
+
+	form {
+		padding: 1.5em 3em;
+	}
+
+	#loginform {
+		box-shadow: 0 1px 4px rgba( 0, 0, 0, 0.3 );
+	}
+
+	h1 {
+		a {
+			width: 300px;
+			height: 108px;
+			background-image: url( $logo );
+			background-size: contain;
+			background-position: center center;
+			filter: drop-shadow( 0px 2px 1px #888 );
+		}
+	}
+
+	label {
+		color: #111;
+	}
+
+	input[type="text"], input[type="password"] {
+		border: 1px solid #cfcfcf;
+		box-shadow: none;
+	}
+
+}
+
+.wp-core-ui { 
+
+	.button-primary {
+		background: #6a5bb4;
+		border-color: #534597 #493d85 #493d85;
+		border-radius: 0;
+		color: #FBFBFB;
+		box-shadow: 0 1px 0 #493d85;
+		text-shadow: 0 -1px 1px #493d85, 1px 0 1px #493d85, 0 1px 1px #493d85, -1px 0 1px #493d85;
+	}
+
+	.button-primary:hover, .button-primary:focus {
+		background: #7465b9;
+		border-color: #493d85;
+		color: #FBFBFB;
+		box-shadow: 0 1px 0 #493d85;
+	}
+
+}

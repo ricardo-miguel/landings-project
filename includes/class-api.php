@@ -1,13 +1,13 @@
 <?php
 /**
- * Lansub - < API class >
+ * Landings Project - < API class >
  * This is a built-in script, please do not
  * modify if is not really necessary.
  *
- * @package lansub
+ * @package landings
  */
 
-namespace Lansub;
+namespace Landings;
 
 /**
  * API class
@@ -18,7 +18,7 @@ class API {
 	/**
 	 * API URI
 	 *
-	 * @var string
+	 * @var string|bool
 	 */
 	protected $service;
 
@@ -33,10 +33,10 @@ class API {
 	 * Class constructor
 	 */
 	function __construct() {
-		$this->service = get_option( 'lansub_api_uri' );
+		$this->service = get_option( 'landings_api_uri' );
 		$this->headers = array(
 			'cache-control' => 'no-cache',
-			'x-api-key'     => get_option( 'lansub_api_key' ),
+			'x-api-key'     => get_option( 'landings_api_key' ),
 			'Content-Type'  => 'application/json; charset=utf-8',
 		);
 	}
@@ -48,13 +48,13 @@ class API {
 	 * @param    boolean $json      Whether return JSON void or object.
 	 * @return   void|object
 	 */
-	public function get( $action = '', $json = true ) {
+	public function get( $action = '', $json = false ) {
 		$output = $this->request( $action );
 
 		if ( $json ) {
 			wp_send_json( $output );
 		} else {
-			return json_decode( $output );
+			return $output;
 		}
 	}
 
@@ -66,13 +66,13 @@ class API {
 	 * @param    boolean $json      Whether return JSON void or object.
 	 * @return   void|object
 	 */
-	public function post( $action = '', $fields = array(), $json = true ) {
+	public function post( $action = '', $fields = array(), $json = false ) {
 		$output = $this->request( $action, 'POST', $fields );
 
 		if ( $json ) {
 			wp_send_json( $output );
 		} else {
-			return json_decode( $output );
+			return $output;
 		}
 	}
 

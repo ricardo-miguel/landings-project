@@ -1,0 +1,96 @@
+/**
+ * Landings Home Page Stylesheet
+ * This is a built-in script, please do not
+ * modify if is not really necessary.
+ *
+ * @package landings
+ */
+/**
+ * Global wrapper name
+ *
+ * @var    string
+ * @since  0.2
+ */
+/**
+ * Color scheme array
+ *
+ * @var    array
+ * @since  0.2
+ */
+.landings * {
+  box-sizing: border-box;
+}
+
+.landings.wrapper {
+  text-align: center;
+  padding: 2em 0;
+}
+
+.landings .logo {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.landings .logo img {
+  display: inline-block;
+  max-width: 380px;
+}
+
+.landings .hub {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.landings .hub a {
+  display: inline-block;
+  width: 100%;
+  max-width: 180px;
+  margin: 0.5em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.landings .hub a .card {
+  display: inline-block;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.landings .hub a .card:hover {
+  background-color: #23282d;
+}
+
+.landings .hub a .card:hover span {
+  transition: color 0.3s ease-in-out;
+}
+
+.landings .hub a .card:hover span:first-of-type {
+  color: transparent;
+}
+
+.landings .hub a .card:hover span:last-of-type {
+  color: #FFF;
+}
+
+.landings .hub a .card span:first-of-type {
+  font-size: 350%;
+  margin: 0.15em 0 0.25em 0;
+  background-image: linear-gradient(120deg, #ff8568, #ffd1c2, #ddd2d6, #b1e1f2, #b1d9e9, #6ab7d8);
+  background-size: 100% 100%;
+  background-clip: text;
+}
+
+.landings .hub a .card span:last-of-type {
+  display: block;
+  color: #888888;
+}
+
+.landings .card {
+  margin-top: 0;
+  min-width: 55px;
+}
+
+.landings .fa {
+  font-family: 'Font Awesome 5 Free';
+}

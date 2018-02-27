@@ -1,0 +1,98 @@
+/**
+ * Landings Home Page Stylesheet
+ * This is a built-in script, please do not
+ * modify if is not really necessary.
+ *
+ * @package landings
+ */
+
+/**
+ * Global wrapper name
+ *
+ * @var    string
+ * @since  0.2
+ */
+$global: ".landings";
+
+/**
+ * Color scheme array
+ *
+ * @var    array
+ * @since  0.2
+ */
+$scheme: ( #ff8568, #ffd1c2, #ddd2d6, #b1e1f2, #b1d9e9, #6ab7d8 );
+
+#{ $global } {
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&.wrapper {
+		text-align: center;
+		padding: 2em 0;
+	}
+
+	.logo {
+		display: block;
+		margin-bottom: 2em;
+		img {
+			display: inline-block;
+			max-width: 380px;
+		}
+	}
+
+	.hub {
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+		a {
+			display: inline-block;
+			width: 100%;
+			max-width: 180px;
+			margin: 0.5em;
+			color: inherit;
+			text-decoration: none;
+			.card {
+				display: inline-block;
+				width: 100%;
+				transition: background-color 0.3s ease-in-out;
+				&:hover {
+					background-color: #23282d;
+					span {
+						transition: color 0.3s ease-in-out;
+						&:first-of-type {
+							color: transparent;
+						}
+						&:last-of-type {
+							color: #FFF;
+						}
+					}
+				}
+				span {
+					&:first-of-type {
+						font-size: 350%;
+						margin: 0.15em 0 0.25em 0;
+						background-image: linear-gradient( 120deg, nth( $scheme, 1 ), nth( $scheme, 2 ), nth( $scheme, 3 ), nth( $scheme, 4 ), nth( $scheme, 5 ), nth( $scheme, 6 ) );
+						background-size: 100% 100%;
+						background-clip: text;
+					}
+					&:last-of-type {
+						display: block;
+						color: #888888;
+					}
+				}
+			}
+		}
+	}
+
+	.card {
+		margin-top: 0;
+		min-width: 55px;
+	}
+
+	.fa {
+		font-family: 'Font Awesome 5 Free';
+	}
+
+}
