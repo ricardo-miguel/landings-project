@@ -45,26 +45,38 @@ class Menu {
 	 * @return  void
 	 */
 	function init() {
-		add_action( 'admin_bar_menu', array( $this, 'custom_bar_menu' ), 99 );
-		//add_action( 'admin_menu', array( $this, 'build' ) );
+		add_action( 'admin_bar_menu', array( $this, 'logo_bar_menu' ), 1 );
+		add_action( 'admin_bar_menu', array( $this, 'custom_bar_menu' ), 90 );
+		add_action( 'admin_menu', array( $this, 'build' ) );
 	}
 
+	/**
+	 * Prepend plugin's logo at admin bar.
+	 *
+	 * @return void
+	 */
+	function logo_bar_menu() {
+		global $wp_admin_bar;
+		$wp_admin_bar->add_node(
+			[
+				'id'    => 'landings-project',
+				'title' => '<img src="' . LANDINGS_URL . 'assets/public/logo_small.png" />',
+				'href'  => '/',
+				'meta'  => [
+					'class' => 'landings-admin-bar',
+				],
+			]
+		);
+	}
+
+	/**
+	 * Modifies top bar nodes.
+	 *
+	 * @return void
+	 */
 	function custom_bar_menu() {
 		global $wp_admin_bar;
 		$wp_admin_bar->remove_node( 'wp-logo' );
-		$wp_admin_bar->remove_node( 'site-name' );
-		$wp_admin_bar->remove_node( 'comments' );
-		$wp_admin_bar->remove_node( 'new-content' );
-		$wp_admin_bar->remove_node( 'view' );
-
-		$wp_admin_bar->add_node( 
-			array(
-				'id'    => 'landings-project',
-				'title' => '<img src="' . LANDINGS_URL .'assets/public/logo_small.png" />',
-				'href'  => '/',
-				'meta'  => array( 'class' => 'landings-admin-bar' )
-			)
-		);
 	}
 
 	/**
@@ -75,16 +87,15 @@ class Menu {
 	 */
 	public function build() {
 		add_menu_page(
-			__( 'Landings', 'landings' ),
-			__( 'Landings', 'landings' ),
+			__( 'General', 'landings' ),
+			__( 'Landings Settings', 'landings' ),
 			'edit_pages',
 			$this->home,
 			array( $this, 'home' ),
-			'dashicons-flag',
-			4
+			'dashicons-admin-generic',
+			75
 		);
 	}
-
 
 	/**
 	 * Admin home page
@@ -95,8 +106,10 @@ class Menu {
 	public function home() {
 		Utils::load_public_assets( 'fontawesome-all.min.css' );
 		Utils::load_admin_assets( 'home.min.css' );
-		Utils::load_admin_page( 'home.html', array(
-			"LOGO" => LANDINGS_URL . 'assets/public/logo.png'
-		) );
+		Utils::load_admin_page(
+			'home.html', array(
+				'LOGO' => LANDINGS_URL . 'assets/public/logo.png',
+			)
+		);
 	}
 }

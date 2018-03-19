@@ -14,14 +14,14 @@ use \Landings\Utils as Utils;
 /**
  * [Admin] Core class
  * All needed actions and filters are settled here.
- * 
+ *
  * @since 0.1
  */
 class Core {
 
 	/**
 	 * Class construct
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	function __construct() {
@@ -46,21 +46,18 @@ class Core {
 	 * @return void
 	 */
 	function general_admin_hooks() {
-		//Utils::load_admin_assets( 'dashboard.min.css' );
-
-		//remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');
-
-		wp_admin_css_color( 
-			'landings', 
-			__( 'Landings Project', 'landings' ), 
+		remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+		wp_admin_css_color(
+			'landings',
+			__( 'Landings Project', 'landings' ),
 			LANDINGS_URL . 'assets/admin/css/scheme/colors.min.css',
 			array( '#222222', '#6a5bb4', '#CCCCCC', '#F0F0F0' ),
-			array( 
+			array(
 				'base' => '#F0F0F0',
 				'focus' => '#F0F0F0',
-				'current' => '#F0F0F0'
+				'current' => '#F0F0F0',
 			)
 		);
-		
 	}
+
 }

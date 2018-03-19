@@ -1,19 +1,19 @@
 <?php
 /**
- * Landings Project - < API class >
+ * Landings Project - < Verbs class >
  * This is a built-in script, please do not
  * modify if is not really necessary.
  *
  * @package landings
  */
 
-namespace Landings;
+namespace Landings\API;
 
 /**
- * API class
+ * API Core class
  * Sort of bridge between plugin itself and web service
  */
-class API {
+class Verbs {
 
 	/**
 	 * API URI

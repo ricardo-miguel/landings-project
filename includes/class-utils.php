@@ -23,7 +23,7 @@ class Utils {
 	 * @param   array $array   Ordered path to file.
 	 * @return  string|bool    System file path.
 	 */
-	public static function path( $array = array() ) {
+	public static function path( $array = [] ) {
 		if ( ! is_array( $array ) ) {
 			return false;
 		} else {

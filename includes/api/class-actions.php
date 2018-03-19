@@ -7,17 +7,17 @@
  * @package landings
  */
 
-namespace Landings;
+namespace Landings\API;
 
 /**
  * Connector class
  * WordPress actions for the bridge between plugin itself and web service
  */
-class Connector extends API {
+class Actions extends Verbs {
 
 	/**
 	 * Class construct
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	function __construct() {
@@ -44,8 +44,6 @@ class Connector extends API {
 	public function get_channels() {
 		$nonce = wp_create_nonce( 'landings_get_channels' );
 		if ( Utils::check_nonce( 'landings_get_channels', $nonce ) ) {
-			$id       = ( array_key_exists( 'id', $_GET ) ) ? wp_unslash( $_GET['id'] ) : false;
-			$code     = ( array_key_exists( 'code', $_GET ) ) ? wp_unslash( $_GET['code'] ) : false;
 			$channels = $this->get( 'channels' );
 			wp_send_json( $channels );
 		}

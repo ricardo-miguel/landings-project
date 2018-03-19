@@ -3,7 +3,7 @@
  * Plugin Name: Landings Project
  * Plugin URI: //digevo.com
  * Description: Landing pages builder. Formerly known as Digevo Landings.
- * Version: 0.3a
+ * Version: 0.3 alpha
  * Author: <a href="//ricardomiguel.cl">Ricardo Miguel</a>.
  * License: EULA
  *
