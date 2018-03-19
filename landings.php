@@ -1,13 +1,19 @@
 <?php
 /**
  * Plugin Name: Landings Project
- * Plugin URI: //digevo.com
- * Description: Landing pages builder. Formerly known as Digevo Landings.
- * Version: 0.3 alpha
- * Author: <a href="//ricardomiguel.cl">Ricardo Miguel</a>.
- * License: EULA
+ * Plugin URI:  //ricardomiguel.cl
+ * Description: A powerful landing builder tool for WordPress.
+ * Version:     0.4 alpha
+ * Author:      Ricardo Miguel
+ * Author URI:  //ricardomiguel.cl
+ * Text Domain: landings-project
+ * Domain Path: /languages
+ * License:     GPL-3.0
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  *
- * @package landings
+ * @package   landings-project
+ * @author    Ricardo Miguel
+ * @license   GPL-3.0
  */
 
 /**
@@ -22,7 +28,7 @@ defined( 'ABSPATH' ) || die( 'Don\'t try so hard!' );
  *
  * @since   0.1
  */
-define( 'LANDINGS_VERSION', '0.3 alpha' );
+define( 'LANDINGS_VERSION', '0.4 alpha' );
 
 /**
  * Set common constants
