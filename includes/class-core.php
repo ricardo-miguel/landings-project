@@ -117,7 +117,7 @@ class Core {
 				if ( ! $layout ) {
 					echo '<i>No data</i>';
 				}
-			break;
+				break;
 			case 'landing_views':
 				$views = $this->get_landing_views( $post_id );
 				if ( ! $views ) {
